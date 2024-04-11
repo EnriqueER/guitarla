@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Guitar from './components/Guitar'
+import { db } from './data/db'
 //import './App.css'
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
   //state
   const [auth, setAuth] = useState([])
   
+  console.log(db);
+
   return (
     <>
       <Header/>
