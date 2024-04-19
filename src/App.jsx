@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react'
+//import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Guitar from './components/Guitar'
-import { db } from './data/db'
+//import { db } from './data/db'
+import useCart from './hooks/useCart.js'
 //import './App.css'
 
 function App() {
 
+  const { data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart()
+  /*
   //state - Como es archivo local podemos poner lo que hay en el archivo - por ejemplo - useState(db)
   const initialCart = () => { // Buscamos si el carrito tiene algo almacenado localmente
     const localStorageCart = localStorage.getItem('cart')
@@ -80,7 +83,7 @@ function App() {
 
   function clearCart() {
     setCart([])
-  }
+  }*/
 
   return (
     <>
@@ -90,6 +93,8 @@ function App() {
         increaseQuantity={increaseQuantity}
         decreaseQuantity={decreaseQuantity}
         clearCart={clearCart}
+        isEmpty={isEmpty}
+        cartTotal={cartTotal}
       />
 
         <main className="container-xl mt-5">
